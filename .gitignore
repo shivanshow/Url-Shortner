@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+
+# OS/Editor
+.DS_Store
+.idea/          # IntelliJ IDEA config folder
+*.iml           # IntelliJ module files
+*.log           # Log files
+
+# Optional (add if needed)
+/dist           # Build output
+/tmp            # Temporary files
