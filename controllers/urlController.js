@@ -11,6 +11,17 @@ const normalizeUrl = (url) => {
 exports.createShortUrl = async (req, res) => {
     try {
         const body = req.body;
+
+        const existing = await URL.findOne({
+            redirectUrl: body.url
+        });
+
+        if(existing){
+            return res.json({
+                id: existing.shortId
+            });
+        }
+
         if (!body.url) return res.status(400).json({ error: "url is required!" });
 
         const shortId = nanoid(8);
